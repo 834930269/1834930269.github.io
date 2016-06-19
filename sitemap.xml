@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://834930269.github.io/blog/2016/06/19/mytitle/</loc>
+    <lastmod>2016-06-19T14:33:11+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://834930269.github.io/blog/archives/</loc>
   </url>
   <url>
     <loc>http://834930269.github.io/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/aboutme/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/blog/categories/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/abobtme/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/blog/categories/sui-bi/</loc>
   </url>
 </urlset>
