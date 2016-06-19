@@ -4,7 +4,7 @@
   <title><![CDATA[地平线上的一匹狼]]></title>
   <link href="http://834930269.github.io/atom.xml" rel="self"/>
   <link href="http://834930269.github.io/"/>
-  <updated>2016-06-19T15:25:37+08:00</updated>
+  <updated>2016-06-19T22:23:55+08:00</updated>
   <id>http://834930269.github.io/</id>
   <author>
     <name><![CDATA[CasaLan]]></name>
@@ -18,7 +18,7 @@
     <link href="http://834930269.github.io/blog/2016/06/19/mytitle/"/>
     <updated>2016-06-19T14:33:11+08:00</updated>
     <id>http://834930269.github.io/blog/2016/06/19/mytitle</id>
-    <content type="html"><![CDATA[<h1>再见,时间.</h1>
+    <content type="html"><![CDATA[<h1><font face="楷体" ><B>再见,时间.</h1>
 
 <p>   喧嚣的世界,在独处的时候终于变成了小孩.</p>
 
@@ -34,6 +34,8 @@
 
 <pre><code>                --CasaLan.keep moving forward
 </code></pre>
+
+<p><font face="楷体" color=1E90FF><B></p>
 ]]></content>
   </entry>
   
