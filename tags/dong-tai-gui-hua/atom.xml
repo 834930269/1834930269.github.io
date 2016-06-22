@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Tag: 动态规划 | 地平线上的一匹狼]]></title>
+  <link href="http://834930269.github.io/tags/dong-tai-gui-hua/atom.xml" rel="self"/>
+  <link href="http://834930269.github.io/"/>
+  <updated>2016-06-22T20:25:44+08:00</updated>
+  <id>http://834930269.github.io/</id>
+  <author>
+    <name><![CDATA[CasaLan]]></name>
+    <email><![CDATA[m13569859563@163.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[动态规划-基础-完全背包问题]]></title>
+    <link href="http://834930269.github.io/blog/2016/06/22/first/"/>
+    <updated>2016-06-22T13:46:47+08:00</updated>
+    <id>http://834930269.github.io/blog/2016/06/22/first</id>
+    <content type="html"><![CDATA[<p><font face="楷体" ></p>
+
+<h3>先以从问题下手作为突破吧.</h3>
+
+<pre><code>题目来源:HDU-4508
+</code></pre>
+
+<h2><center>湫湫系列故事——减肥记I</h2>
+
+<p>Problem Description:</p>
+
+<blockquote><p>对于吃货来说，过年最幸福的事就是吃了，没有之一！<br>
+但是对于女生来说，卡路里（热量）是天敌啊！<br>
+资深美女湫湫深谙“胖来如山倒，胖去如抽丝”的道理，所以她希望你能
+帮忙制定一个食谱，能使她吃得开心的同时，不会制造太多的天敌。<br>
+当然，为了方便你制作食谱，湫湫给了你每日食物清单，上面描述了当     <br/>
+天她想吃的每种食物能带给她的幸福程度，以及会增加的卡路里量。</p></blockquote>
+
+<!--more-->
+
+
+<p>Input:</p>
+
+<blockquote><p>输入包含多组测试用例。<br>
+每组数据以一个整数n开始，表示每天的食物清单有n种食物。<br>
+接下来n行，每行两个整数a和b，其中a表示这种食物可以带给湫湫的幸福值（数值越大，越幸福），b表示湫湫吃这种食物会吸收的卡路里量。<br>
+最后是一个整数m，表示湫湫一天吸收的卡路里不能超过m。<br></p>
+
+<p>　　[Technical Specification]<br>
+　　1. 1 &lt;= n &lt;= 100<br>
+　　2. 0 &lt;= a,b &lt;= 100000<br>
+　　3. 1 &lt;= m &lt;= 100000<br></p></blockquote>
+
+<p>Output:</p>
+
+<blockquote><p>对每份清单，输出一个整数，即满足卡路里吸收量的同时，湫湫可获得的最大幸福值。</p></blockquote>
+
+<p>Sample Input:</p>
+
+<blockquote><p>3<br>
+3 3<br>
+7 7<br>
+9 9<br>
+10<br>
+5<br>
+1 1<br>
+5 3<br>
+10 3<br>
+6 8<br>
+7 5<br>
+6　　<br></p></blockquote>
+
+<p>Sample Output:</p>
+
+<blockquote><p>10<br>
+20</p></blockquote>
+
+<p>Source:
+    <a href="http://acm.hdu.edu.cn/showproblem.php?pid=4508" title="Problem-4508">Problem-4508</a></p>
+
+<p>AC代码:<br></p>
+
+<pre><code class="c++">#include&lt;algorithm&gt;
+#include&lt;cstdio&gt;
+#include&lt;cstring&gt;
+using namespace std;
+int dp[100006];
+int main()
+{
+    int N;
+    while(~scanf("%d",&amp;N))
+    {
+        memset(dp,0,sizeof(dp));
+        int clu[102],sen[102],aim;
+        for(int i=0;i&lt;N;i++)
+            scanf("%d%d",&amp;sen[i],&amp;clu[i]);
+                    scanf("%d",&amp;aim);
+        for(int i=0;i&lt;N;i++)
+            for(int j=clu[i];j&lt;=aim;j++)
+            {
+                dp[j]=max(dp[j],dp[j-clu[i]]+sen[i]);
+            }
+        printf("%d\n",dp[aim]);
+    }
+    return 0;
+}
+</code></pre>
+
+<p>接下来借此题来介绍背包问题代码的思路.<br></p>
+
+<pre><code>首先,我们定义一个dp数组来记忆(储存)"每个卡路里下的最大幸福
+度"←这句很重要!
+</code></pre>
+
+<p>依照题意添加输入数据.</p>
+
+<pre><code>然后我们借用两个一维数组来储存每个食物会增加的卡路里和幸服度       
+clu[],sen[],以及aim:最大卡路里.
+</code></pre>
+
+<p>然后我们来探究dp数组究竟是用来干什么的.</p>
+
+<pre><code>正如上面所述,dp数组是来记忆"每个卡路里下的最大幸福度"
+那就表明这个数组内的元素并不一定是不变的.
+我们对输入的几个食物进行遍历,每个食物被遍历到时,通过dp
+数组来进行"每个卡路里下最大幸福值"的更新.
+</code></pre>
+
+<p>如.</p>
+
+<pre><code>输入最大卡路里为10.
+那么需要用到的总共是dp[0]~dp[10]
+dp[0],dp[1]…dp[10].
+数组下标即是对应的卡路里.
+而dp数组储存,不,记忆的是每个(下标)卡路里下最大的幸福度.
+</code></pre>
+
+<p>那么我们拐回去看代码.
+这里我对代码内的dp数组直接进行分析:</p>
+
+<pre><code>for(int i=0;i&lt;N;i++)
+        for(int j=clu[i];j&lt;=aim;j++)
+        {
+            dp[j]=max(dp[j],dp[j-clu[i]]+sen[i]);
+        }
+这句里,唯一的一个赋值式是dp[j]=max(dp[j];dp[j-clu[i]]+sen[i]);
+我仅解释为什么j=clu[i]和dp[j-clu[i]]:
+j=clu[i]从遍历到的食物的clu[i]开始更新dp数组.
+
+而dp[j-clu[i]],则表示j-clu[i]这个卡路里在dp数组内记忆的
+最大幸福值，比较,然后更新.
+</code></pre>
+
+<p>另外推荐一个网站,可以学习算法:
+    <a href="https://www.julyedu.com/video/play/27" title="七月在线-直播coding-动态规划">七月在线-直播coding-动态规划</a></p>
+
+<p>欢迎提意见,我也是小白~</p>
+
+<pre><code>    --版权:CasaLan.keep moving forward
+</code></pre>
+
+<p>原文链接:<a href="http://be-sunshine.cn/blog/2016/06/22/first/" title="原文链接">http://be-sunshine.cn/blog/2016/06/22/first/</a></p>
+]]></content>
+  </entry>
+  
+</feed>
