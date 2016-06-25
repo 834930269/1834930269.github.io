@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://834930269.github.io/blog/2016/06/24/zhaiji/</loc>
+    <lastmod>2016-06-24T19:32:35+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://834930269.github.io/blog/2016/06/22/first/</loc>
     <lastmod>2016-06-22T13:46:47+08:00</lastmod>
   </url>
@@ -16,25 +20,34 @@
     <loc>http://834930269.github.io/404.html</loc>
   </url>
   <url>
-    <loc>http://834930269.github.io/blog/archives/</loc>
+    <loc>http://834930269.github.io/TED/QXDN.html</loc>
   </url>
   <url>
     <loc>http://834930269.github.io/</loc>
   </url>
   <url>
+    <loc>http://834930269.github.io/blog/archives/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/message/</loc>
+  </url>
+  <url>
     <loc>http://834930269.github.io/blog/categories/</loc>
   </url>
   <url>
-    <loc>http://834930269.github.io/aboutme/</loc>
-  </url>
-  <url>
-    <loc>http://834930269.github.io/abobtme/</loc>
+    <loc>http://834930269.github.io/res/</loc>
   </url>
   <url>
     <loc>http://834930269.github.io/tag-cloud/</loc>
   </url>
   <url>
-    <loc>http://834930269.github.io/message/</loc>
+    <loc>http://834930269.github.io/aboutme/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/qxdn/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/abobtme/</loc>
   </url>
   <url>
     <loc>http://834930269.github.io/blog/categories/sui-bi/</loc>
