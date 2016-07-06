@@ -53,15 +53,6 @@
     <loc>http://834930269.github.io/res/</loc>
   </url>
   <url>
-    <loc>http://834930269.github.io/tags/sui-bi/</loc>
-  </url>
-  <url>
-    <loc>http://834930269.github.io/tags/dong-tai-gui-hua/</loc>
-  </url>
-  <url>
-    <loc>http://834930269.github.io/tags/story/</loc>
-  </url>
-  <url>
     <loc>http://834930269.github.io/blog/categories/sui-bi/</loc>
   </url>
   <url>
@@ -69,5 +60,14 @@
   </url>
   <url>
     <loc>http://834930269.github.io/blog/categories/story/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/tags/sui-bi/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/tags/dong-tai-gui-hua/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/tags/story/</loc>
   </url>
 </urlset>
