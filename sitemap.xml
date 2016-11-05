@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://834930269.github.io/blog/2016/11/05/fanyi1/</loc>
+    <lastmod>2016-11-05T11:12:03+08:00</lastmod>
+  </url>
+  <url>
     <loc>http://834930269.github.io/blog/2016/07/05/thef/</loc>
     <lastmod>2016-07-05T18:54:42+08:00</lastmod>
   </url>
@@ -62,6 +66,9 @@
     <loc>http://834930269.github.io/blog/categories/story/</loc>
   </url>
   <url>
+    <loc>http://834930269.github.io/blog/categories/fan-yi-yu-ti-jie/</loc>
+  </url>
+  <url>
     <loc>http://834930269.github.io/tags/sui-bi/</loc>
   </url>
   <url>
@@ -69,5 +76,8 @@
   </url>
   <url>
     <loc>http://834930269.github.io/tags/story/</loc>
+  </url>
+  <url>
+    <loc>http://834930269.github.io/tags/fan-yi-yu-ti-jie/</loc>
   </url>
 </urlset>

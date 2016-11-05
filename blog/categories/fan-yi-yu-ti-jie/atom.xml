@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: 翻译与题解 | 地平线上的一匹狼]]></title>
+  <link href="http://834930269.github.io/blog/categories/fan-yi-yu-ti-jie/atom.xml" rel="self"/>
+  <link href="http://834930269.github.io/"/>
+  <updated>2016-11-05T11:56:11+08:00</updated>
+  <id>http://834930269.github.io/</id>
+  <author>
+    <name><![CDATA[CasaLan]]></name>
+    <email><![CDATA[m13569859563@163.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[POJ题目翻译-3069-Saruman's-Army]]></title>
+    <link href="http://834930269.github.io/blog/2016/11/05/fanyi1/"/>
+    <updated>2016-11-05T11:12:03+08:00</updated>
+    <id>http://834930269.github.io/blog/2016/11/05/fanyi1</id>
+    <content type="html"><![CDATA[<h1><center>Saruman's Army</h1>
+
+
+<blockquote><p>Saruman the White must lead his army along a straight path from Isengard to Helm’s Deep. To keep track of his forces, Saruman distributes seeing stones, known as palantirs, among the troops. Each palantir has a maximum effective range of R units, and must be carried by some troop in the army (i.e., palantirs are not allowed to “free float” in mid-air). Help Saruman take control of Middle Earth by determining the minimum number of palantirs needed for Saruman to ensure that each of his minions is within R units of some palantir.</p></blockquote>
+
+<p>翻译:</p>
+
+<blockquote><p>白人萨鲁曼必须领导他的军队从艾辛格圣盔谷沿着一条笔直的道路(前进),跟着他的部队,在军队中,萨鲁曼将他看到的石头分布称为Palantirs.每个Palantirs有个最大的有效范围R,每个军队必须有一个骑兵队(i.e.(即),不存在浮空的Palantirs),帮助萨鲁曼控制中土世界(？)通过确定最小需要的Palantirs数目来确保每一个以R为单元的Palantirs内都有它的一个仆从.</p></blockquote>
+
+<!--more-->
+
+
+<p>Sample Input</p>
+
+<p>0 3
+10 20 20
+10 7
+70 30 1 7 15 20 50
+-1 -1</p>
+
+<p>Sample Output</p>
+
+<p>2
+4</p>
+
+<p>Code:<br></p>
+
+<pre><code class="ruby">#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+
+void solve(int X[],int N,int R){
+     sort(X,X+N);
+    int ans=0,i=0;
+    while(i&lt;N){//每次更新两个点,一个是找到第一个需要标记的点,一个是找到第二个需要标记的点,这样才能开始下一个循环
+        int Begin=X[i++];
+        while(i&lt;N&amp;&amp;X[i]&lt;=Begin+R)i++;
+        int End=X[i-1];
+        while(i&lt;N&amp;&amp;X[i]&lt;=End+R)i++;
+        ans++;
+    }
+    printf("%d\n",ans);
+}
+
+int main(){
+    int N,R,X[2001];
+    while(scanf("%d %d", &amp;R, &amp;N) != EOF &amp;&amp; (R != -1 &amp;&amp; N != -1)){//这题必须有EOF,不然超时
+        for(int i=0;i&lt;N;i++){
+            scanf("%d",&amp;X[i]);
+        }
+
+        solve(X,N,R);
+    }
+    return 0;
+}
+</code></pre>
+
+<p>如上</p>
+]]></content>
+  </entry>
+  
+</feed>
