@@ -4,7 +4,7 @@
   <title><![CDATA[地平线上的一匹狼]]></title>
   <link href="http://834930269.github.io/atom.xml" rel="self"/>
   <link href="http://834930269.github.io/"/>
-  <updated>2016-11-08T15:50:12+08:00</updated>
+  <updated>2016-11-08T16:21:04+08:00</updated>
   <id>http://834930269.github.io/</id>
   <author>
     <name><![CDATA[CasaLan]]></name>
@@ -12,6 +12,114 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[POJ题目翻译-3617-Cow Bowling]]></title>
+    <link href="http://834930269.github.io/blog/2016/11/08/fanyi2/"/>
+    <updated>2016-11-08T15:54:12+08:00</updated>
+    <id>http://834930269.github.io/blog/2016/11/08/fanyi2</id>
+    <content type="html"><![CDATA[<h1><center>Cow Bowling</h1>
+
+
+<blockquote><p>The cows don&rsquo;t use actual bowling balls when they go bowling. They each take a number (in the range 0..99), though, and line up in a standard bowling-pin-like triangle like this:</p></blockquote>
+
+<pre><code>          7
+
+
+        3   8
+
+
+      8   1   0
+
+
+    2   7   4   4
+
+
+  4   5   2   6   5
+</code></pre>
+
+<blockquote><p>Then the other cows traverse the triangle starting from its tip and moving &ldquo;down&rdquo; to one of the two diagonally adjacent cows until the &ldquo;bottom&rdquo; row is reached. The cow&rsquo;s score is the sum of the numbers of the cows visited along the way. The cow with the highest score wins that frame.</p>
+
+<p>Given a triangle with N (1 &lt;= N &lt;= 350) rows, determine the highest possible sum achievable.</p></blockquote>
+
+<!--more-->
+
+
+<p>翻译:</p>
+
+<blockquote><p>奶牛打保龄时不是用真正的保龄球,他们各自取一个号码(在0到99的范围内),但是(?),他们队伍按照标准的保龄球摆放的三角,像这样:</p></blockquote>
+
+<p>略&hellip;</p>
+
+<blockquote><p>其次其他的奶牛只能从他开始出发的那个尖端向下运动时只能到达和尖端相邻的两个奶牛处,这个奶牛记录下自己走过奶牛的编号和,分数最高的那个奶牛赢得框架(????TAT).</p>
+
+<p>给一个N行的三角,确定所有可能中最大的和;</p></blockquote>
+
+<p>Sample Input</p>
+
+<p>5
+7
+3 8
+8 1 0
+2 7 4 4
+4 5 2 6 5</p>
+
+<p>Sample Output</p>
+
+<p>30</p>
+
+<p>Code:<br></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cp">#include&lt;stdio.h&gt;</span>
+</span><span class='line'><span class="cp">#include&lt;algorithm&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">400</span><span class="p">][</span><span class="mi">400</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">N</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">N</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="c1">//自底向上,直到根节点,//最底层不需要计算</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+=</span><span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如上</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[POJ题目翻译-3069-Saruman's-Army]]></title>

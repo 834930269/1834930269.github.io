@@ -1,0 +1,257 @@
+
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>POJ题目翻译-3617-Cow Bowling - 地平线上的一匹狼</title>
+	<meta name="author" content="CasaLan">
+
+	
+	<meta name="description" content="POJ题目翻译-3617-Cow Bowling Cow Bowling The cows don&rsquo;t use actual bowling balls when they go bowling. They each take a number (in the range 0..99 &hellip;">
+	
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="地平线上的一匹狼" type="application/atom+xml">
+	
+	<link rel="canonical" href="http://834930269.github.io/blog/2016/11/08/fanyi2/">
+	<link href="/favicon.png" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<link href="/stylesheets/font-awesome.min.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<link href='http://fonts.googleapis.com/css?family=Nunito:400,300,700' rel='stylesheet' type='text/css'>
+	<script src="//libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+	
+  
+
+</head>
+
+
+<body style="cursor:url(be-sunshine.cn/cur/ZCXZ.ani)">
+	
+	<div class="container">
+		<div class="left-col">
+			<div class="intrude-less">
+			<header id="header" class="inner"><div class="profilepic">
+	
+	<img alt="图片访问出错..." src="/images/tx.jpg" style="width: 160px;" >
+	
+</div>
+<href="/">地平线上的一匹狼
+
+卡萨岚.他说:Keep moving forward.
+
+<nav id="main-nav"><ul class="main">
+    <li><a href="/">Blog</a></li>
+	<li><a href="/tag-cloud/">Tags</a></li>
+	<li><a href="/res">纪录片</a></li>
+	<li><a href="/aboutme">关于我</a></li>
+	<li><a href="/message">留言板</a></li>
+	<li><a href="/blog/archives">时间归档</a></li>
+</ul>
+
+</nav>
+<nav id="sub-nav">
+	<div class="social">
+		
+		
+		
+		
+			<a class="github" href="https://github.com/834930269" title="GitHub">GitHub</a>
+		
+		
+		
+		
+		
+			<a class="pinterest" href="https://pinterest.com/casa1672/" title="Pinterest">Pinterest</a>
+		
+		
+		
+		
+			<a class="douban" href="https://www.douban.com/people/147316593/" title="Douban">Douban</a>
+		
+		
+		
+    	
+    	
+			<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+</nav>
+
+</header>				
+			</div>
+		</div>	
+		<div class="mid-col">
+			
+				
+			
+			<div class="mid-col-container">
+				<div id="content" class="inner"><article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+	<h1 class="title" itemprop="name">POJ题目翻译-3617-Cow Bowling</h1>
+	<div class="entry-content" itemprop="articleBody"><h1><center>Cow Bowling</h1>
+
+
+<blockquote><p>The cows don&rsquo;t use actual bowling balls when they go bowling. They each take a number (in the range 0..99), though, and line up in a standard bowling-pin-like triangle like this:</p></blockquote>
+
+<pre><code>          7
+
+
+        3   8
+
+
+      8   1   0
+
+
+    2   7   4   4
+
+
+  4   5   2   6   5
+</code></pre>
+
+<blockquote><p>Then the other cows traverse the triangle starting from its tip and moving &ldquo;down&rdquo; to one of the two diagonally adjacent cows until the &ldquo;bottom&rdquo; row is reached. The cow&rsquo;s score is the sum of the numbers of the cows visited along the way. The cow with the highest score wins that frame.</p>
+
+<p>Given a triangle with N (1 &lt;= N &lt;= 350) rows, determine the highest possible sum achievable.</p></blockquote>
+
+<!--more-->
+
+
+<p>翻译:</p>
+
+<blockquote><p>奶牛打保龄时不是用真正的保龄球,他们各自取一个号码(在0到99的范围内),但是(?),他们队伍按照标准的保龄球摆放的三角,像这样:</p></blockquote>
+
+<p>略&hellip;</p>
+
+<blockquote><p>其次其他的奶牛只能从他开始出发的那个尖端向下运动时只能到达和尖端相邻的两个奶牛处,这个奶牛记录下自己走过奶牛的编号和,分数最高的那个奶牛赢得框架(????TAT).</p>
+
+<p>给一个N行的三角,确定所有可能中最大的和;</p></blockquote>
+
+<p>Sample Input</p>
+
+<p>5
+7
+3 8
+8 1 0
+2 7 4 4
+4 5 2 6 5</p>
+
+<p>Sample Output</p>
+
+<p>30</p>
+
+<p>Code:<br></p>
+
+<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='c++'><span class='line'><span class="cp">#include&lt;stdio.h&gt;</span>
+</span><span class='line'><span class="cp">#include&lt;algorithm&gt;</span>
+</span><span class='line'><span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="n">dp</span><span class="p">[</span><span class="mi">400</span><span class="p">][</span><span class="mi">400</span><span class="p">]</span><span class="o">=</span><span class="p">{</span><span class="mi">0</span><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">(){</span>
+</span><span class='line'>    <span class="kt">int</span> <span class="n">N</span><span class="p">;</span>
+</span><span class='line'>    <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">N</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">N</span><span class="p">;</span><span class="n">i</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">scanf</span><span class="p">(</span><span class="s">&quot;%d&quot;</span><span class="p">,</span><span class="o">&amp;</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">N</span><span class="o">-</span><span class="mi">2</span><span class="p">;</span><span class="n">i</span><span class="o">&gt;=</span><span class="mi">0</span><span class="p">;</span><span class="n">i</span><span class="o">--</span><span class="p">)</span><span class="c1">//自底向上,直到根节点,//最底层不需要计算</span>
+</span><span class='line'>        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">i</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
+</span><span class='line'>            <span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">+=</span><span class="n">max</span><span class="p">(</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="p">],</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">][</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]);</span>
+</span><span class='line'>
+</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%d</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]);</span>
+</span><span class='line'>    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>如上</p>
+</div>
+
+</article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><!--  start -->
+	<div class="ds-thread" data-thread-key="/blog/2016/11/08/fanyi2" data-title="POJ题目翻译-3617-Cow Bowling" data-url="http://834930269.github.io/blog/2016/11/08/fanyi2/"></div>
+<!--  end -->
+<!--  start  -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"casalan"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!--  end --></div>
+  </section>
+
+</div>
+			</div>
+			<footer id="footer" class="inner"><script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1259617609'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1259617609%26show%3Dpic2' type='text/javascript'%3E%3C/script%3E"));</script>
+<br>
+Copyright &copy; 2016
+
+    CasaLan
+
+
+Design credit: <a href="http://shashankmehta.in/archive/2012/greyshade.html">Shashank Mehta</a></footer>
+		</div>
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

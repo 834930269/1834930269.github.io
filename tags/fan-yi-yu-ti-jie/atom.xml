@@ -4,7 +4,7 @@
   <title><![CDATA[Tag: 翻译与题解 | 地平线上的一匹狼]]></title>
   <link href="http://834930269.github.io/tags/fan-yi-yu-ti-jie/atom.xml" rel="self"/>
   <link href="http://834930269.github.io/"/>
-  <updated>2016-11-08T15:50:12+08:00</updated>
+  <updated>2016-11-08T16:21:04+08:00</updated>
   <id>http://834930269.github.io/</id>
   <author>
     <name><![CDATA[CasaLan]]></name>
@@ -12,6 +12,91 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[POJ题目翻译-3617-Cow Bowling]]></title>
+    <link href="http://834930269.github.io/blog/2016/11/08/fanyi2/"/>
+    <updated>2016-11-08T15:54:12+08:00</updated>
+    <id>http://834930269.github.io/blog/2016/11/08/fanyi2</id>
+    <content type="html"><![CDATA[<h1><center>Cow Bowling</h1>
+
+
+<blockquote><p>The cows don&rsquo;t use actual bowling balls when they go bowling. They each take a number (in the range 0..99), though, and line up in a standard bowling-pin-like triangle like this:</p></blockquote>
+
+<pre><code>          7
+
+
+        3   8
+
+
+      8   1   0
+
+
+    2   7   4   4
+
+
+  4   5   2   6   5
+</code></pre>
+
+<blockquote><p>Then the other cows traverse the triangle starting from its tip and moving &ldquo;down&rdquo; to one of the two diagonally adjacent cows until the &ldquo;bottom&rdquo; row is reached. The cow&rsquo;s score is the sum of the numbers of the cows visited along the way. The cow with the highest score wins that frame.</p>
+
+<p>Given a triangle with N (1 &lt;= N &lt;= 350) rows, determine the highest possible sum achievable.</p></blockquote>
+
+<!--more-->
+
+
+<p>翻译:</p>
+
+<blockquote><p>奶牛打保龄时不是用真正的保龄球,他们各自取一个号码(在0到99的范围内),但是(?),他们队伍按照标准的保龄球摆放的三角,像这样:</p></blockquote>
+
+<p>略&hellip;</p>
+
+<blockquote><p>其次其他的奶牛只能从他开始出发的那个尖端向下运动时只能到达和尖端相邻的两个奶牛处,这个奶牛记录下自己走过奶牛的编号和,分数最高的那个奶牛赢得框架(????TAT).</p>
+
+<p>给一个N行的三角,确定所有可能中最大的和;</p></blockquote>
+
+<p>Sample Input</p>
+
+<p>5
+7
+3 8
+8 1 0
+2 7 4 4
+4 5 2 6 5</p>
+
+<p>Sample Output</p>
+
+<p>30</p>
+
+<p>Code:<br></p>
+
+<pre><code class="c++">#include&lt;stdio.h&gt;
+#include&lt;algorithm&gt;
+using namespace std;
+
+int dp[400][400]={0};
+
+int main(){
+    int N;
+    scanf("%d",&amp;N);
+
+    for(int i=0;i&lt;N;i++)
+        for(int j=0;j&lt;=i;j++)
+            scanf("%d",&amp;dp[i][j]);
+
+    for(int i=N-2;i&gt;=0;i--)//自底向上,直到根节点,//最底层不需要计算
+        for(int j=0;j&lt;=i;j++)
+            dp[i][j]+=max(dp[i+1][j],dp[i+1][j+1]);
+
+    printf("%d\n",dp[0][0]);
+    return 0;
+
+}
+</code></pre>
+
+<p>如上</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[POJ题目翻译-3069-Saruman's-Army]]></title>
